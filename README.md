@@ -8,8 +8,8 @@ Just clone the repo, install the dependencies listed below and run. Compiled exc
 
 ## Built With
 
-* [.NET](https://www.microsoft.com/net/) - .NET Library
-* [Magick.NET](https://github.com/dlemstra/Magick.NET) - RAW Converter
+* [.NET](https://www.microsoft.com/net) - .NET Library
+* [dcraw](https://www.cybercom.net/~dcoffin/dcraw) - RAW Converter
 * [SharpCaster](https://github.com/Tapanila/SharpCaster) - Chromecast C# SDK for Windows
 * [MetroFramework](https://github.com/dennismagno/metroframework-modern-ui) - Used to create modern UI
 
