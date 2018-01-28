@@ -50,6 +50,7 @@
             this.mainPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.mainPanel.AutoScroll = true;
             this.mainPanel.Controls.Add(this.FolderLocation);
             this.mainPanel.Controls.Add(this.ImageListBox);
             this.mainPanel.Controls.Add(this.PrevBtn);
@@ -60,6 +61,7 @@
             this.mainPanel.Controls.Add(this.ShowDevicesBtn);
             this.mainPanel.Controls.Add(this.SelectFolderBtn);
             this.mainPanel.Controls.Add(this.ImagePreviewBox);
+            this.mainPanel.HorizontalScrollbar = true;
             this.mainPanel.HorizontalScrollbarBarColor = true;
             this.mainPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.mainPanel.HorizontalScrollbarSize = 10;
@@ -67,6 +69,7 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(710, 472);
             this.mainPanel.TabIndex = 0;
+            this.mainPanel.VerticalScrollbar = true;
             this.mainPanel.VerticalScrollbarBarColor = true;
             this.mainPanel.VerticalScrollbarHighlightOnWheel = false;
             this.mainPanel.VerticalScrollbarSize = 10;
@@ -85,7 +88,7 @@
             this.ImageListBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.ImageListBox.FormattingEnabled = true;
-            this.ImageListBox.Location = new System.Drawing.Point(7, 96);
+            this.ImageListBox.Location = new System.Drawing.Point(7, 84);
             this.ImageListBox.Name = "ImageListBox";
             this.ImageListBox.Size = new System.Drawing.Size(178, 368);
             this.ImageListBox.TabIndex = 16;
@@ -204,9 +207,9 @@
             this.ImagePreviewBox.ErrorImage = null;
             this.ImagePreviewBox.Image = ((System.Drawing.Image)(resources.GetObject("ImagePreviewBox.Image")));
             this.ImagePreviewBox.InitialImage = null;
-            this.ImagePreviewBox.Location = new System.Drawing.Point(191, 96);
+            this.ImagePreviewBox.Location = new System.Drawing.Point(191, 84);
             this.ImagePreviewBox.Name = "ImagePreviewBox";
-            this.ImagePreviewBox.Size = new System.Drawing.Size(516, 317);
+            this.ImagePreviewBox.Size = new System.Drawing.Size(516, 329);
             this.ImagePreviewBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ImagePreviewBox.TabIndex = 7;
             this.ImagePreviewBox.TabStop = false;
@@ -218,8 +221,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(750, 550);
             this.Controls.Add(this.mainPanel);
+            this.MinimumSize = new System.Drawing.Size(750, 550);
             this.Name = "Home";
-            this.Resizable = false;
             this.Text = "RAWCast";
             this.Load += new System.EventHandler(this.Home_Load);
             this.mainPanel.ResumeLayout(false);

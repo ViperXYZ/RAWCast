@@ -15,6 +15,8 @@ namespace RAWCast
     public partial class Home : MetroFramework.Forms.MetroForm
     {
         String currentDirectory = "";
+       
+
         public Home()
         {
             InitializeComponent();
@@ -88,11 +90,23 @@ namespace RAWCast
         {
             if (!string.IsNullOrEmpty(Filename) && (!string.IsNullOrEmpty(currentDirectory)))
             {
-                String imagePath = Path.Combine(currentDirectory, Filename);
-                ImagePreviewBox.Image.Dispose();
-                MemoryStream ms = new MemoryStream(File.ReadAllBytes(imagePath));
-                ImagePreviewBox.Image = Image.FromStream(ms);
-                return true;
+                String extension = Filename.Substring(Filename.LastIndexOf('.') + 1);
+                if(extension.ToLower() != "cr2")
+                {
+                    String imagePath = Path.Combine(currentDirectory, Filename);
+                    ImagePreviewBox.Image.Dispose();
+                    MemoryStream ms = new MemoryStream(File.ReadAllBytes(imagePath));
+                    ImagePreviewBox.Image = Image.FromStream(ms);
+                    return true;
+                }
+                else
+                {
+                    String imagePath = Path.Combine(currentDirectory, Filename);
+                    ImagePreviewBox.Image.Dispose();
+                    MemoryStream converted_img = Converter.ConvertImage(imagePath);
+                    ImagePreviewBox.Image = Image.FromStream(converted_img);
+                    return true;
+                }
             }
             return false;
 
@@ -136,21 +150,10 @@ namespace RAWCast
 
         private void ImageListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
-            {
-                String selectedFileName = ImageListBox.SelectedItems[0].ToString();
-                if (!string.IsNullOrEmpty(selectedFileName) && (!string.IsNullOrEmpty(currentDirectory)))
-                {
-                    String imagePath = Path.Combine(currentDirectory, selectedFileName);
-                    ImagePreviewBox.Image.Dispose();
-                    ImagePreviewBox.Image = Image.FromFile(imagePath);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("There eas an error at: " + ex.Message + " " + ex.Source);
-            }
 
+            String selectedFileName = ImageListBox.SelectedItems[0].ToString();
+            LoadImage(selectedFileName);
+            
         }
 
         private void FolderLocation_Click(object sender, EventArgs e)
