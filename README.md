@@ -16,6 +16,7 @@ Just clone the repo, install the dependencies listed below and run. Compiled exc
 ## Authors
 
 * **K-M Samiul Haque** - [Personal Site](https://samiulhaque.com/)
+* **Tamanna Sultana** - [Personal Site](https://www.tsultana.ca/)
 
 ## License
 
